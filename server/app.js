@@ -1,10 +1,18 @@
 // Core Module
 const path = require('path');
 
+// Load environment variables from server/.env when present (safe local development)
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 // External Module
 const express = require('express');
 const mongoose = require('mongoose');
-const DB_path= "mongodb+srv://astha:Astha27@cluster0.ckrdv3g.mongodb.net/todo?appName=Cluster0"
+
+// Load MongoDB connection string from environment variable for security
+const DB_path = process.env.MONGODB_URI;
+if (!DB_path) {
+  console.error('ERROR: MONGODB_URI environment variable is not set. Set it before starting the server.');
+  process.exit(1);
+}
 const cors = require("cors");
 const bodyParser = require("body-parser");
 //Local Module
