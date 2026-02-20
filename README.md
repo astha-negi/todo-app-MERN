@@ -53,5 +53,3 @@ git remote add origin <your-repo-url>
 git branch -M main
 git push -u origin main
 ```
-
-If you want, I can commit this `README.md` and push it for you.
