@@ -1,5 +1,7 @@
+const API_URL = "https://todo-app-mern-er4l.onrender.com/api/todo";
+
 export const addItemToServer = async (task, date) => {
-  const response = await fetch("http://localhost:3009/api/todo", {
+  const response = await fetch(API_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -10,31 +12,32 @@ export const addItemToServer = async (task, date) => {
 };
 
 export const getItemsFromServer = async () => {
-    const response = await fetch("http://localhost:3009/api/todo");
-    const items= await response.json();
-    return items.map(mapServerItemToLocalItem);
-}
+  const response = await fetch(API_URL);
+  const items = await response.json();
+  return items.map(mapServerItemToLocalItem);
+};
 
 export const markItemCompletedOnServer = async (id) => {
-    const response = await fetch(`http://localhost:3009/api/todo/${id}`, {
-        method: "PUT",
-    });
-    return mapServerItemToLocalItem(await response.json());
-}
+  const response = await fetch(`${API_URL}/${id}`, {
+    method: "PUT",
+  });
+  return mapServerItemToLocalItem(await response.json());
+};
 
 export const deleteItemFromServer = async (id) => {
-    await fetch(`http://localhost:3009/api/todo/${id}`, {
-        method: "DELETE",
-    });
-    return {id};
-}
+  await fetch(`${API_URL}/${id}`, {
+    method: "DELETE",
+  });
+  return { id };
+};
+
 const mapServerItemToLocalItem = (serverItem) => {
-    return {
-        id: serverItem._id,
-        name: serverItem.task,
-        dueDate: serverItem.date,
-        completed: serverItem.completed,
-        createdAt: serverItem.createdAt,
-        updatedAt: serverItem.updatedAt,
-    }
-}
+  return {
+    id: serverItem._id,
+    name: serverItem.task,
+    dueDate: serverItem.date,
+    completed: serverItem.completed,
+    createdAt: serverItem.createdAt,
+    updatedAt: serverItem.updatedAt,
+  };
+};

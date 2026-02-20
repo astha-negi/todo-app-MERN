@@ -34,7 +34,7 @@ cd client
 npm run dev
 ```
 
-Open http://localhost:5173/ for the client and whichever port the server logs for API endpoints.
+Open const API_URL = import.meta.env.VITE_API_URL; for the client and whichever port the server logs for API endpoints.
 
 ## Build
 
