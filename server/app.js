@@ -29,7 +29,7 @@ app.use(express.json());
 app.use("/api/todo", todoItemsRouter);
 app.use(errorController.pageNotFound);
 
-const PORT = 3009;
+const PORT = process.env.PORT || 5000;
 
 mongoose.connect(DB_path).then(() =>{
   console.log("Connected to MongoDB");
