@@ -1,55 +1,55 @@
-# Todo App
+# 📝 MERN Todo App
 
-Simple Todo application with separate `client` (React + Vite + Tailwind) and `server` (Node/Express) folders.
+A full-stack Todo application built using the **MERN stack (MongoDB, Express, React, Node.js)**.  
+Users can add, view, update, complete, and delete tasks with real-time persistence using MongoDB Atlas.
 
-## Prerequisites
-- Node.js (16+ recommended)
-- npm (comes with Node)
+---
 
-## Install
-From the repo root, install server and client dependencies:
+## 🚀 Live Demo
 
-```powershell
-cd "C:\Users\astha\OneDrive\Desktop\Todo app\server"
-npm install
+🔗 **Frontend (Netlify):**  
+https://stirring-tanuki-8d5eff.netlify.app
 
-cd "C:\Users\astha\OneDrive\Desktop\Todo app\client"
-npm install
-```
+🔗 **Backend API (Render):**  
+https://todo-app-mern-er4l.onrender.com/api/todo
 
-## Run (development)
+---
 
-Start server (from `server`):
+## ✨ Features
 
-```powershell
-cd server
-npm run dev
-# or: node app.js
-```
+✅ Add new todos with due date  
+✅ View all tasks  
+✅ Mark tasks as completed  
+✅ Delete tasks  
+✅ Persistent data storage with MongoDB Atlas  
+✅ Fully deployed MERN stack app  
 
-Start client (from `client`):
+---
 
-```powershell
-cd client
-npm run dev
-```
+## 🛠️ Tech Stack
 
-Open const API_URL = import.meta.env.VITE_API_URL; for the client and whichever port the server logs for API endpoints.
+### Frontend
+- React (Vite)
+- CSS
+- Fetch API
+- Netlify (Deployment)
 
-## Build
+### Backend
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Mongoose
+- Render (Deployment)
 
-Build client:
+---
 
-```powershell
-cd client
-npm run build
-```
+## 📂 Project Structure
+todo-app-MERN
+│
+├── client # React frontend
+├── server # Express backend
+└── README.md
 
-## Git / Deployment
-- A `.gitignore` is provided — ensure you add a remote before pushing:
+## 👩‍💻 Author
 
-```powershell
-git remote add origin <your-repo-url>
-git branch -M main
-git push -u origin main
-```
+**Astha Negi**  
